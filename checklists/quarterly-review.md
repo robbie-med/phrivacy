@@ -26,6 +26,10 @@ About 30 minutes, four times a year.
 - [ ] No new SMS-based 2FA on important accounts
 - [ ] Revoke old linked devices (Signal, email, patient platform)
 
+## Laptop
+- [ ] Work laptop: encryption on, OS updated, no personal apps or accounts crept in
+- [ ] Review linked devices and sessions in the work vault and patient platform
+
 ## Backups
 - [ ] Personal backup is recent. Do a test restore once a year.
 - [ ] The duress PIN is still something you remember and won't enter by accident

@@ -40,6 +40,13 @@ Work through this in order. Plan for an evening for the device plus a week of mi
 - [ ] Start data-broker opt-outs
 - [ ] Move SMS 2FA to passkeys/authenticator where possible
 
+## Passwords & laptop ([10](../docs/10-passwords-and-laptop.md))
+- [ ] Separate password vault accounts: Personal (Owner), Work (Clinical + laptop), optional Finance (Quarantine)
+- [ ] Autofill service set per profile
+- [ ] Hardware security key registered for work SSO and personal email
+- [ ] Work-only laptop: full-disk encryption, auto-lock, updates, one work-only account
+- [ ] Laptop syncs only with work systems. No personal vault, messengers, or phone mirroring from Owner.
+
 ## Hardening
 - [ ] Everything in [07 – Hardening checklist](../docs/07-hardening-checklist.md)
 - [ ] Duress PIN set **after** backups and eSIM recovery info are ready

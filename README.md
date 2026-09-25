@@ -26,7 +26,8 @@ This repo is a practical playbook for keeping three worlds apart on one device:
 6. **Protect the personal number like a password.** Messenger discovery, data brokers, carrier port-out locks. → [06-personal-number-opsec](docs/06-personal-number-opsec.md)
 7. **Harden the device.** Duress PIN, auto-reboot, USB-C lockdown, per-app network and sensor permissions. → [07-hardening-checklist](docs/07-hardening-checklist.md)
 8. **Run it every day** without friction. → [08-daily-operations](docs/08-daily-operations.md)
-9. **Know what to do when something goes wrong.** Lost phone, harassing patient, SIM swap. → [09-incident-response](docs/09-incident-response.md)
+9. **Separate passwords and computers too.** One password vault per world, and a personally owned laptop used only for work, synced only with the Clinical profile. → [10-passwords-and-laptop](docs/10-passwords-and-laptop.md)
+10. **Know what to do when something goes wrong.** Lost phone, harassing patient, SIM swap. → [09-incident-response](docs/09-incident-response.md)
 
 ## Contents
 
@@ -41,6 +42,7 @@ This repo is a practical playbook for keeping three worlds apart on one device:
 - [07 – Hardening checklist](docs/07-hardening-checklist.md)
 - [08 – Daily operations](docs/08-daily-operations.md)
 - [09 – Incident response](docs/09-incident-response.md)
+- [10 – Password managers & the work-only laptop](docs/10-passwords-and-laptop.md)
 
 ### Checklists
 - [Initial setup checklist](checklists/setup-checklist.md)

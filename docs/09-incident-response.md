@@ -13,6 +13,10 @@ Keep this chapter somewhere you can reach **without your phone**: printed, or in
 
 > GrapheneOS has no "Find My Device" by design. If you want remote wipe of the whole device, the only built-in mechanisms are MDM (work profile only) and the duress PIN. Accept that tradeoff, or run a trusted remote-wipe app in Owner.
 
+## Lost or stolen work laptop
+
+See [10 – When the laptop is lost or stolen](10-passwords-and-laptop.md#when-the-laptop-is-lost-or-stolen).
+
 ## Patient found personal number or accounts
 
 1. **Don't engage from the personal account.** Reply, if at all, from the patient line: "Please use this number for all communication with me. [policy]."

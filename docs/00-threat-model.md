@@ -9,7 +9,7 @@ Know who you're defending against before you change a setting. For a physician w
 | **Personal phone number** | It's the key to your identity: bank 2FA, messenger accounts, data-broker profiles, your home address. |
 | **Personal life data**: photos, location, contacts, family accounts | Boundary violations, stalking, and embarrassment. |
 | **PHI on the device**: messages, photos, EHR cache, call logs | HIPAA breach exposure, board complaints, patient harm. |
-| **Work credentials**: SSO, MFA, EHR sessions | Account takeover at your employer or health system. |
+| **Work credentials**: SSO, MFA, EHR sessions, the work password vault, the work laptop | Account takeover at your employer or health system. |
 | **Your time and attention** | Burnout is a real risk. An always-reachable number erodes the boundary between on and off. |
 
 ## Adversaries & scenarios
