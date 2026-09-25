@@ -42,7 +42,7 @@ Downloading or transferring an eSIM needs Google's privileged eSIM management co
 3. Add the eSIM through the carrier's QR code, activation code, or transfer flow.
 4. Once your eSIMs are installed and working, you can turn the privileged eSIM toggle back off. Installed eSIMs keep working. You'll need it again to add, transfer, or delete an eSIM.
 
-> Want no Google account in your personal profile? Sandboxed Play doesn't require you to sign in to activate an eSIM. You can also uninstall Play from Owner after activation and keep Google only in the Clinical profile.
+> **Keep Personal de-Googled:** you don't need to sign in to Play to activate an eSIM. Once the eSIMs work, uninstall sandboxed Play from Owner. Google then lives only in the Clinical and Quarantine profiles. Reinstall it temporarily whenever you need to add or transfer an eSIM.
 
 ## First-boot decisions
 
@@ -50,7 +50,7 @@ Downloading or transferring an eSIM needs Google's privileged eSIM management co
 |---|---|
 | Owner profile PIN/password | 6+ digit PIN minimum. A passphrase is better. See [07](07-hardening-checklist.md). |
 | Fingerprint | Fine for convenience. Consider 2-factor fingerprint unlock (fingerprint + PIN) if your release has it. |
-| Google account in Owner | Optional. Many people use none in Owner and put Google only in the Clinical profile. |
+| Google in Owner | None. Banking and other Play-dependent personal apps go in the Quarantine profile ([02](02-profile-architecture.md#secondary-user--quarantine)). |
 | Backups | Plan per profile. See [08](08-daily-operations.md#backups). |
 
 ## Updates

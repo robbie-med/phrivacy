@@ -13,22 +13,24 @@ Work through this in order. Plan for an evening for the device plus a week of mi
 - [ ] Buy an unlocked Pixel 10+ that's on the GrapheneOS supported list
 - [ ] Install via the web installer, **relock the bootloader**, disable OEM unlocking ([01](../docs/01-device-and-install.md))
 - [ ] Verify with Auditor
-- [ ] Owner: sandboxed Play (at least temporarily) → enable privileged eSIM management → activate personal eSIM
+- [ ] Owner: sandboxed Play (temporarily, no sign-in) → enable privileged eSIM management → activate personal eSIM
 - [ ] Set the default calls/SMS/data line
 
 ## Profiles
 - [ ] Owner = Personal: PIN, fingerprint, personal apps ([02](../docs/02-profile-architecture.md))
 - [ ] Create **Clinical** user: separate PIN, notifications forwarded, calls & SMS off
 - [ ] Clinical: sandboxed Play, work account, MDM (work profile if required), authenticator
-- [ ] Clinical: patient-line app, masking dialer, EHR, email, secure chat
-- [ ] Optional: Quarantine user, Private Space
+- [ ] Clinical: patient-line app, EHR, email, secure chat (masking dialer optional, as a fallback)
+- [ ] Create **Quarantine** user: separate PIN, own sandboxed Play (throwaway or no account), banking and untrusted apps
+- [ ] Remove sandboxed Play from Owner once eSIMs are active
+- [ ] Optional: Private Space
 
 ## Numbers
 - [ ] Patient-facing number provisioned (new or **ported from old personal number**)
 - [ ] CNAM = practice name
 - [ ] Office hours, after-hours auto-reply, voicemail greeting ([templates](../templates/))
 - [ ] Team inbox / answering-service routing
-- [ ] Outbound caller ID = clinic main number
+- [ ] Test outbound: calls and texts from the patient-line app show the patient-facing number
 - [ ] Test inbound call: Personal in foreground, Clinical in background, phone locked, cellular only
 
 ## Personal number

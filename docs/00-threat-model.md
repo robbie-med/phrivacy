@@ -23,7 +23,7 @@ Know who you're defending against before you change a setting. For a physician w
 | 5 | **SIM-swap / port-out fraudster** | Steals your personal number to reset bank or email accounts. | Carrier port-out lock/PIN, app-based 2FA or passkeys, not SMS ([06](06-personal-number-opsec.md)) |
 | 6 | **Lost or stolen device** | Phone left in a clinic exam room or an Uber. | Strong PIN, auto-reboot, profiles at rest (BFU), remote wipe via MDM for work profile ([07](07-hardening-checklist.md), [09](09-incident-response.md)) |
 | 7 | **Employer MDM overreach** | Hospital MDM wants full-device management of a personally owned phone. | Enroll MDM *only* inside the Clinical profile. Never on Owner ([05](05-work-apps-and-mdm.md)) |
-| 8 | **Malicious or leaky apps** | A "free" app harvests contacts or location. | Contact Scopes, Storage Scopes, Network/Sensors permissions, Quarantine profile ([02](02-profile-architecture.md), [07](07-hardening-checklist.md)) |
+| 8 | **Malicious or leaky apps** | A "free" app or a banking app's analytics SDK harvests contacts, location, or a device fingerprint. | Contact Scopes, Storage Scopes, Network/Sensors permissions, Quarantine profile ([02](02-profile-architecture.md), [07](07-hardening-checklist.md)) |
 | 9 | **Phishing / smishing** | Fake "EHR password expired" text to the patient line. | Separate profiles, passkeys/FIDO2, verify through known channels |
 | 10 | **Compelled or coerced unlock** | Someone forces you to unlock (domestic situation, robbery). | Duress PIN, lockdown, BFU state ([07](07-hardening-checklist.md)) |
 

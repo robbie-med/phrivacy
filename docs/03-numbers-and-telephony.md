@@ -6,12 +6,12 @@ This chapter matters most. **The phone number you give patients decides almost e
 
 | Number | Type | Given to | Lives in |
 |---|---|---|---|
-| **Personal** | Carrier eSIM #1 | Family, friends, banks (ideally not even banks, see [06](06-personal-number-opsec.md)) | Owner |
+| **Personal** | Carrier eSIM #1 | Family, friends, critical accounts only (see [06](06-personal-number-opsec.md)) | Owner |
 | **Patient-facing** | VoIP number on a BAA-covered platform | Patients and caregivers | Clinical |
 | **Work/colleague** *(optional)* | Health-system extension, secure chat, or carrier eSIM #2 | Colleagues, nurses, admin, pharmacies | Clinical (or Owner if it's a carrier eSIM) |
-| **Outbound caller ID** | Masked to the clinic's main number | What patients see when you call them | Clinical |
+| **Outbound caller ID** | The patient-facing number itself | What patients see when you call or text them | Clinical |
 
-A minimal setup is **two numbers**: personal (carrier) plus patient-facing (VoIP). Add the third if you want colleagues to reach you without going through the patient channel.
+The patient-facing number works in both directions. Patients reach you on it, and you call and text them back from it. It's one consistent number they can save as "my doctor." A minimal setup is **two numbers**: personal (carrier) plus patient-facing (VoIP). Add the third if you want colleagues to reach you without going through the patient channel.
 
 ## Why the patient number should NOT be a SIM
 
@@ -33,10 +33,10 @@ A VoIP number on a clinician-oriented platform:
 
 ## Platform options (verify BAAs, features, and pricing yourself)
 
-| Option | Inbound patient number | Outbound masking | BAA | Notes |
+| Option | Inbound patient number | Outbound from same number | BAA | Notes |
 |---|---|---|---|---|
 | **Spruce Health** | Yes (new or ported) | Yes | Yes (clinician-focused) | Calls, secure messaging, SMS bridge, fax, team inboxes, after-hours routing. Popular with DPC and small practices. |
-| **Doximity Dialer** | No | Yes, shows clinic/hospital number | Covered under Doximity's terms for US clinicians (verify) | Free for verified US clinicians. Outbound-only, which is a *feature*: patients can't call back to you. |
+| **Doximity Dialer** | No | n/a; shows a clinic/hospital number you choose | Covered under Doximity's terms for US clinicians (verify) | Free for verified US clinicians. Outbound-only, so it's a **fallback**, not the patient line. Useful if you ever have to call from outside the patient platform. |
 | **Google Workspace + Google Voice** | Yes | Yes | Yes, under a Workspace BAA (paid Workspace only) | **Consumer Google Voice has no BAA. Don't use it for PHI.** |
 | **Business VoIP** (e.g., Quo/OpenPhone, RingCentral, Zoom Phone, Dialpad) | Yes | Yes | Varies by plan | Several offer HIPAA plans with a BAA. Confirm the plan tier and whether SMS is covered. |
 | **Health-system tools** (Epic Secure Chat, TigerConnect, Vocera, Teams Phone) | Sometimes | Sometimes | Employer's | Use these if your employer provides them. They're already in the compliance program. |
@@ -56,9 +56,9 @@ This is common, and fixable:
 
 ## Outbound calls to patients
 
-- **Default:** use the masking dialer (Doximity, Spruce, or your VoIP app) so patients see the **clinic's number**.
-- **Emergency fallback from a carrier line:** dial `*67` before the number to block caller ID (US). It doesn't hide you from 911, toll-free numbers, or some carrier systems. It also means patients see "No Caller ID," and many won't answer.
-- Never call a patient from your personal line without masking. It sits in their call log forever and syncs to their contact-discovery apps.
+- **Default: call and text back from the patient-facing number, in the patient-line app.** Patients see the number they already have. The conversation stays in one BAA-covered thread, and it's documented where your team can see it.
+- **Don't reply from any other number.** A reply from a personal line puts that number in their call log and contact-discovery apps for good. A reply from an unfamiliar number teaches patients to trust random numbers, which is how smishing works.
+- **Fallback when the patient platform is down or you're on a different phone:** a caller-ID-masking dialer like Doximity, set to show the patient-facing or clinic number. As a last resort from a carrier line, dial `*67` to block caller ID (US). That shows "No Caller ID," and many patients won't answer. It also doesn't hide you from 911, toll-free numbers, or some carrier systems.
 
 ## Carrier telephony is device-wide
 

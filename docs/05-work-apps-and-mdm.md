@@ -14,7 +14,7 @@ Most work apps need Google Play Services for push notifications, maps, and Safet
 Some apps check **Play Integrity** and refuse to run on anything that isn't a Google-certified stock OS. GrapheneOS passes *basic* integrity but not *device* or *strong* integrity, by design.
 
 - **Most apps work.** Outlook, Teams, Microsoft Authenticator, Duo, Okta Verify, Slack, Zoom, Doximity, and most VoIP apps generally run fine on GrapheneOS with sandboxed Play.
-- **Some banking apps and a few enterprise apps** strictly require device integrity. GrapheneOS maintains a community list of apps that work or break. Search the GrapheneOS forum for the app name before you commit.
+- **Some banking apps and a few enterprise apps** strictly require device integrity. (Banking apps belong in the Quarantine profile, not Clinical or Personal. See [02](02-profile-architecture.md#secondary-user--quarantine).) GrapheneOS maintains a community list of apps that work or break. Search the GrapheneOS forum for the app name before you commit.
 - GrapheneOS has asked app developers to use the **hardware attestation API** to allow GrapheneOS explicitly. You can ask your vendor or IT department to do this.
 
 ### EHR mobile apps

@@ -8,7 +8,7 @@ A setup you can't live with is a setup you'll abandon. Here's how to make it rou
 |---|---|
 | **Morning** | Unlock Owner. Switch to Clinical once and unlock it, so its apps start and the patient line can ring. Switch back to Personal. |
 | **Clinic hours** | Stay in Clinical if you're charting or messaging heavily, or stay in Personal and rely on forwarded notifications. Tap a forwarded notification to jump into Clinical. |
-| **Outbound patient call** | In Clinical, use the masking dialer. Never the stock dialer. |
+| **Calling or texting a patient** | In Clinical, from the patient-line app, so it goes out from the patient-facing number. Never the stock dialer or SMS app. |
 | **Evening (not on call)** | Switch Modes to "Off duty." The auto-reply covers the patient line. Optionally **End session** on Clinical for a hard stop. |
 | **On-call nights** | Keep Clinical running. Use the "On call" mode so only the on-call or patient-line app rings through. |
 | **Weekend / vacation** | End session on Clinical. Set vacation auto-replies and coverage on the patient platform. |

@@ -26,7 +26,7 @@ Record consent to text or email in the chart.
 | **After-hours routing** | Answering service or on-call colleague for true urgent issues, if your practice model supports it. |
 | **Team inbox** | Add your MA/nurse/front desk so the line doesn't depend on you alone. |
 | **Vacation mode** | A covering clinician and an updated auto-reply. |
-| **Caller ID for outbound** | The clinic's main number. |
+| **Caller ID for outbound** | The patient-facing number itself. You reach patients from the same number they reach you on. |
 
 ## Device-level boundaries (Android "Modes" / Do Not Disturb)
 

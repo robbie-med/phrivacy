@@ -50,7 +50,8 @@ Menu paths are approximate and move between GrapheneOS releases. Use the Setting
 ## Profiles
 
 - [ ] Clinical: **Send notifications to current user** ON; **phone calls & SMS** OFF unless needed.
-- [ ] Quarantine: no sandboxed Play unless required; **End session** after each use.
+- [ ] Owner/Personal: **no sandboxed Google Play** (remove it after eSIM activation).
+- [ ] Quarantine: own sandboxed Play with a throwaway account or none; banking and untrusted apps here; its own PIN; **End session** after each use.
 - [ ] Guest profile: disabled (**System → Multiple users → Allow guest** off). If you hand the phone to someone, use a dedicated low-privilege profile.
 - [ ] **Allow multiple users from lock screen:** consider OFF so switching requires unlocking Owner first.
 

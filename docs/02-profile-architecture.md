@@ -14,16 +14,16 @@ GrapheneOS offers three ways to compartmentalize apps. Pick the one that fits ea
 
 - The Owner profile starts first after boot and manages the eSIMs and device-wide settings. Treat it as your personal life.
 - Personal eSIM, the default dialer and SMS app for the personal line.
-- Personal messengers (Signal, etc.), family apps, banking, personal email.
+- Personal messengers (Signal, etc.), family apps, personal email, FOSS apps.
 - **No work apps. No PHI. No patient contacts.**
-- Sandboxed Google Play is optional here. Use it only if personal apps need it.
+- **Keep it de-Googled.** No sandboxed Google Play here, apart from temporarily installing it to activate an eSIM (see [01](01-device-and-install.md#esim-activation-on-grapheneos)). Apps that need Play or check Play Integrity, banking apps included, go in **Quarantine**.
 
 ### Secondary user → "Clinical"
 
 Create it under **Settings → System → Multiple users → Add user**. Name it something neutral like "Work" or "Clinic."
 
 - Its **own** sandboxed Google Play and **work** Google/Microsoft account.
-- The patient-line app (Spruce or similar), a caller-ID-masking dialer (e.g., Doximity), EHR mobile apps, work email, Teams/Slack/secure chat, the MFA authenticator for work SSO.
+- The patient-line app (Spruce or similar), EHR mobile apps, work email, Teams/Slack/secure chat, the MFA authenticator for work SSO.
 - MDM / Company Portal if your employer requires it. See [05](05-work-apps-and-mdm.md).
 - Only work and colleague contacts. **Patient contact data stays in the EHR and the BAA platform, not in the Android contacts app.**
 
@@ -35,17 +35,27 @@ Settings for the Clinical user (from Owner: **Settings → System → Multiple u
 | **Allow phone calls & SMS** | Usually OFF | The patient line runs over VoIP, so carrier telephony isn't needed here. Turn it on only if you also use a *carrier* work eSIM from this profile (see [03](03-numbers-and-telephony.md#carrier-telephony-is-device-wide)). |
 | **Install available apps** | Use as needed | Installs an app already present in Owner without re-downloading it. Remember that Play accounts are per-profile. |
 
-### Optional: "Quarantine" secondary user
+### Secondary user → "Quarantine"
 
-For apps that demand your phone number, contacts, or constant location, or that you simply don't trust: rideshare, retail, parking, social media, loyalty apps.
+This is where apps go that you need but don't trust with your personal life:
 
-- No sandboxed Play unless an app requires it.
-- Give it nothing: Contact Scopes with zero contacts, Storage Scopes with no files, Network off for apps that don't need it.
-- End the session when you're done.
+- **Banking and payment apps.** Most need Google Play Services, many check Play Integrity, and many bundle analytics and device-fingerprinting SDKs. They don't belong in a de-Googled personal profile.
+- Rideshare, retail, parking, airline, loyalty, and social media apps.
+- Anything that demands your contacts, constant location, or phone number.
+
+Setup:
+
+- Its **own** sandboxed Google Play, signed in to a throwaway Google account or none at all. That way Google Play in this profile never sees your personal identity.
+- Give apps nothing: Contact Scopes with zero contacts, Storage Scopes with no files, Sensors off, location "only while in use."
+- Its own PIN, different from Owner's.
+- **End session** when you're done. Banking doesn't need to run in the background. Get transaction alerts by email (to an alias) instead of push notifications, or turn on **Send notifications to current user** if you want push alerts.
+- **Bank 2FA:** prefer the bank's passkey or in-app approval over SMS. If a bank insists on SMS, the code arrives on the personal line in Owner. That's fine: the code is all that crosses the boundary.
+
+> Want finer separation? Split Quarantine into two profiles: **Finance** (banks, brokerage, payment apps) and **Untrusted** (everything else). Then a sketchy loyalty app never shares a profile with your bank.
 
 ### Optional: Private Space (inside Owner)
 
-For sensitive personal apps you want hidden and locked even while Owner is unlocked: health, dating, finances, journaling.
+For sensitive personal apps you want hidden and locked even while Owner is unlocked: health tracking, dating, journaling. Anything that needs Google Play still belongs in Quarantine.
 
 ## Alternative: employer-mandated work profile
 

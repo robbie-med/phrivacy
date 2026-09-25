@@ -8,7 +8,7 @@ This repo is a practical playbook for keeping three worlds apart on one device:
 
 | World | Who has access | Where it lives on the phone |
 |---|---|---|
-| **Personal** | Family, friends, banks, your kid's school | Owner profile, personal eSIM |
+| **Personal** | Family, friends, your kid's school | Owner profile (de-Googled), personal eSIM |
 | **Work** | Colleagues, the clinic, the hospital, the EHR | Separate user profile (or work profile) |
 | **Patient-facing** | Patients and their families | A VoIP/secure-messaging number inside the work profile, *never* a personal SIM |
 
@@ -19,8 +19,8 @@ This repo is a practical playbook for keeping three worlds apart on one device:
 ## The short version
 
 1. **Buy a supported Pixel** (Pixel 10 series or newer) and install GrapheneOS with the official web installer. Relock the bootloader. → [01-device-and-install](docs/01-device-and-install.md)
-2. **Split the phone into profiles.** Owner = personal. A separate *Clinical* user profile holds the EHR, the patient line, work email, and MDM. Optionally add a *Quarantine* profile for apps you don't trust. → [02-profile-architecture](docs/02-profile-architecture.md)
-3. **Never give patients a carrier SIM number.** Give them a number on a HIPAA-oriented platform that will sign a BAA (Spruce, a Workspace/enterprise voice product, your health system's tool). Use a caller-ID-masking dialer for outbound calls. → [03-numbers-and-telephony](docs/03-numbers-and-telephony.md)
+2. **Split the phone into profiles.** Owner = personal. A separate *Clinical* user profile holds the EHR, the patient line, work email, and MDM. A *Quarantine* profile holds banking and other Google-dependent or untrusted apps, so Personal stays de-Googled. → [02-profile-architecture](docs/02-profile-architecture.md)
+3. **Never give patients a carrier SIM number.** Give them a number on a HIPAA-oriented platform that will sign a BAA (Spruce, a Workspace/enterprise voice product, your health system's tool). Call and text patients back from that same number, so the practice has one consistent number. → [03-numbers-and-telephony](docs/03-numbers-and-telephony.md)
 4. **Set boundaries in software.** Office-hours routing, after-hours auto-replies, an emergency voicemail greeting, DND Modes. → [04-patient-communication](docs/04-patient-communication.md)
 5. **Keep the work stack contained.** EHR apps, MDM, and authenticators go in the Clinical profile with their own sandboxed Google Play. → [05-work-apps-and-mdm](docs/05-work-apps-and-mdm.md)
 6. **Protect the personal number like a password.** Messenger discovery, data brokers, carrier port-out locks. → [06-personal-number-opsec](docs/06-personal-number-opsec.md)
@@ -60,21 +60,22 @@ This repo is a practical playbook for keeping three worlds apart on one device:
 │  ─────────────────────────                ─────────────────────────         │
 │  • Personal eSIM (carrier)                • Sandboxed Google Play (own)     │
 │  • Dialer / SMS for personal line         • MDM / Company Portal (if req'd) │
-│  • Signal, family apps, banking           • EHR mobile (Haiku/Canto/etc.)   │
-│  • Personal Google acct (optional)        • Patient line app (Spruce, etc.) │
-│  • Personal photos & backups              • Masked-caller-ID dialer         │
+│  • Signal, family apps, FOSS apps         • EHR mobile (Haiku/Canto/etc.)   │
+│  • NO Google Play (de-Googled)            • Patient line app (Spruce, etc.) │
+│  • Personal photos & backups              • Calls/texts OUT from same #     │
 │                                           • Work email, Teams/Slack         │
 │  Notifications from Clinical  ◄───────────  "Send notifications to          │
 │  forwarded here (optional)                   current user" = ON             │
 │                                                                             │
-│  PRIVATE SPACE (optional)                 QUARANTINE PROFILE (optional)     │
-│  • Sensitive personal apps                • Apps that demand phone number,  │
-│                                             contacts, or look shady         │
+│  PRIVATE SPACE (optional)                 QUARANTINE PROFILE                │
+│  • Sensitive personal apps                • Own sandboxed Play, no real acct│
+│                                           • Banking & payment apps          │
+│                                           • Rideshare, retail, social, etc. │
 └─────────────────────────────────────────────────────────────────────────────┘
 
 Patient ──► Patient-facing VoIP number ──► Clinical profile app ──► (after hours) auto-reply / on-call
 Family  ──► Personal carrier number ─────► Owner profile dialer
-You ────► Patient (outbound) ────────────► Masked dialer shows CLINIC number, not yours
+You ────► Patient (outbound) ────────────► Sent from the patient-facing number they already know
 ```
 
 ## Principles
